@@ -1,4 +1,12 @@
-# <c>little-PyProjects</c>
+
+<p align="center">
+  <b># little-PyProjects</b><br>
+  <br><br>
+  <img src="http://s.4cdn.org/image/title/105.gif">
+</p>
+
+
+# little-PyProjects
 Small projects to explore a datasets without a lot commitment. 
 
 ## Arlington Traffic Lights
