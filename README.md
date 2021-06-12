@@ -1,6 +1,6 @@
 
 <p align="center">
-  <b># little-PyProjects</b><br>
+  <h1># little-PyProjects</h1><br>
   <br><br>
   <img src="http://s.4cdn.org/image/title/105.gif">
 </p>
