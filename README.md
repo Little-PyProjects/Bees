@@ -1,8 +1,7 @@
 
 <p align="center">
-  <h1>Little PyProjects:</h1><br>
-  Small projects to explore a datasets without a lot commitment.
-  <br><br>
+Little PyProjects<br>
+Small projects to explore a datasets without a lot commitment.  <br><br>
 </p>
 
 ## Arlington Traffic Lights
