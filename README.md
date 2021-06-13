@@ -2,14 +2,8 @@
 <p align="center">
   <b>Little PyProjects:</b><br>
   Small projects to explore a datasets without a lot commitment.
-  <a href="#">Link 1</a> |
-  <a href="#">Link 2</a> |
-  <a href="#">Link 3</a>
   <br><br>
 </p>
-
-#  little-PyProjects
-
 
 ## Arlington Traffic Lights
 A quick plot of the traffic lights in Arlington, VA using follium. 
