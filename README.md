@@ -1,5 +1,4 @@
 <h1><p align="center">Little PyProjects</h1>  
-
 Small projects to explore a datasets without a lot commitment.  <br>
 <br> <br> </p> </h1>
 
