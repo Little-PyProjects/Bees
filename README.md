@@ -1,18 +1,11 @@
-<h1><p align="center">Little PyProjects</h1>  <br>
-<h2>Small projects to explore a datasets without a lot commitment.</h2>  
-<br> <br> </p> 
-
-
-
-
 
 <p align="center">
-  <b>Some Links:</b><br>
+  <b>Little PyProjects:</b><br>
+  Small projects to explore a datasets without a lot commitment.
   <a href="#">Link 1</a> |
   <a href="#">Link 2</a> |
   <a href="#">Link 3</a>
   <br><br>
-  <img src="http://s.4cdn.org/image/title/105.gif">
 </p>
 
 #  little-PyProjects
