@@ -1,6 +1,6 @@
 
 <p align="center">
-  <b>Little PyProjects:</b><br>
+  <h1>Little PyProjects:</h1><br>
   Small projects to explore a datasets without a lot commitment.
   <br><br>
 </p>
