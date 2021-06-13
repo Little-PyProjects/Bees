@@ -1,11 +1,7 @@
-
-  <h1><p align="center">
-little-PyProjects</h1><br>
-  <br><br
-</p>  </h1>
+<h1><p align="center">Little PyProjects</h1>  <br> <br> <br> </p> </h1>
 
 
-# little-PyProjects
+#  little-PyProjects
 Small projects to explore a datasets without a lot commitment. 
 
 ## Arlington Traffic Lights
