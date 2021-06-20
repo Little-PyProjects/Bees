@@ -1,6 +1,7 @@
 import click
 import random
 
+<<<<<<< HEAD
 
 @click.argument('ndx')
 
@@ -18,3 +19,21 @@ def parse(ndx):
 if __name__ == '__main__':
     parse()
     
+=======
+@click.command()
+
+@click.argument('num', nargs=1, default=1)
+@click.argument('d', nargs=1, default=6)
+
+def roll_em(num, d):
+    """Random dice roll generator"""
+    for _ in range(num):
+        click.echo(f"{random.randint(1,d)}")
+
+# @click.option("--sort", help="Return results in order from low to high")
+# @click.option("--discard", help="discards lowest n rolls")
+# @click.option("--number", help="number of dice to roll")
+
+if __name__ == '__main__':
+    roll_em()
+>>>>>>> 9da0032a48153926bfa04aebf01cfff987fb1018
