@@ -1,25 +1,6 @@
 import click
 import random
 
-<<<<<<< HEAD
-
-@click.argument('ndx')
-
-@click.command()
-def parse(ndx):
-    """Parses input such that 3d6 becomes 3 rolls of 6 sided dice"""
-    c = tuple(ndx.split('d'))
-    num, d = c[0], c[1]
-    print(num, d)
-
-
-# def generate_rolls(num, d):
-#     pass
-
-if __name__ == '__main__':
-    parse()
-    
-=======
 @click.command()
 
 @click.argument('num', nargs=1, default=1)
@@ -36,4 +17,3 @@ def roll_em(num, d):
 
 if __name__ == '__main__':
     roll_em()
->>>>>>> 9da0032a48153926bfa04aebf01cfff987fb1018
