@@ -1,25 +1,31 @@
 import click
 import random
 
+@click.group()
+def cli():
+    pass
+
 @click.command()
-
-
-# @click.option('-s', '--sort', help="Return results in order from low to high")
-# @click.option('-d', "--discard", help="discards lowest n rolls")
-
 @click.argument('ndx')
-
 def parse(ndx):
+    """CLI dice generator"""
     c = tuple(ndx.split('d'))
-    print(c)
-    # c,d = ndx[0], ndx[1]
+    num, d = c[0], c[1]
+    click.echo(f"{num} {d}")
 
-# def roll_em(num, d):
-#     """Random dice roll generator"""
-#     for _ in range(num):
-#         click.echo(f"{random.randint(1,d)}")
+@click.command()
+def gen(num, d):
+    """Random dice roll generator"""
+    for _ in range(num):
+        click.echo(f"{random.randint(1,d)}")
+
+# cli.add_command(parse)
+# cli.add_command(gen)
 
 
 
-if __name__ == '__main__':
-    parse()
+# @click.option('-s', '--sort', help="Return sorted results. Default: low to high")
+# #@click.option('-d', "--discard", help="discards roll(s). Default: low roll(s)")
+
+# if __name__ == '__main__':
+#     cli()
