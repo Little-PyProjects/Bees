@@ -6,4 +6,4 @@ I was casting about looking for an interesting data source. While this isn't it,
 ![screenshot](https://github.com/hrokr/little-pyprojects/blob/main/Arlington_Traffic_Cameras/images/Screen%20Shot.png) 
 
 ## Contents:
- - First draft with Jupyter Notebook
+ - First draft with Jupyter Notebook. Pending any additional data source being made availabe (e.g., camera status or video), I think I'm done with this.
