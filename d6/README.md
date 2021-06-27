@@ -11,5 +11,5 @@
 </H3>
 
 ### What:<br>
-#### For some reason, I was struck by the idea of doing a CLI interface and a random dice rolls generator seemed like a good idea. Being a nerd I immediately thought of the roll a d6 video
-[![roll a d6](https://img.youtube.com/vi/54VJWHL2K3I/2.jpg)](https://youtu.be/54VJWHL2K3I?t=38)
+#### For some reason, I was struck by the idea of doing a CLI interface and a random dice rolls generator seemed like a good idea. Being a nerd, I immediately thought of the 'Roll a D6' video (click on the image if you haven't seen the video)
+[![roll a d6](https://github.com/hrokr/little-pyprojects/blob/main/d6/images/Gamers.png)](https://youtu.be/54VJWHL2K3I?t=38)
