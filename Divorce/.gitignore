@@ -1,0 +1,12 @@
+data/.DS_Store
+.DS_Store
+__pycache__
+
+# notebooks
+.ipynb_checkpoints
+notebooks/lessons_learned.ipynb
+
+# working or holdover code folder
+
+# data
+
