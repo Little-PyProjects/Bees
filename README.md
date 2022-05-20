@@ -4,14 +4,14 @@
 Small projects to explore a datasets without a lot commitment.  <br><br>
 </p>
 
-### [Arlington Traffic Lights](https://github.com/hrokr/little-pyprojects/tree/main/Arlington_Traffic_Cameras)
+### [Arlington Traffic Lights](https://github.com/hrokr/little-pyprojects/tree/main/Arlington_Traffic_Cameras) (done)
 A quick plot of the traffic lights in Arlington, VA using follium. 
 
 ### [Divorce Prediction Model](https://github.com/hrokr/little-pyprojects/tree/main/Divorce) (working)
 Prediction models of divorce. The origional work in Turkey by Dr. Mustafa Kemal Yöntem, Dr. Kemal Adem, Dr. Tahsin İlhan, and Serhat Kılıçarslan.
 WARNING: The Attribute Information does not translate to standard English and is often close to incomphensible.
 
-### [d6](https://github.com/hrokr/little-pyprojects/tree/main/d6) (working)
+### [d6](https://github.com/hrokr/little-pyprojects/tree/main/d6) (On hold. Somebody else did the same thing even with the same name. Dammit)
 A small command line interface (CLI) random number generator using [click](https://click.palletsprojects.com/en/8.0.x/quickstart/#basic-concepts-creating-a-command)
 
 ### The Martian Weather Report (not started)
