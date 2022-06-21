@@ -14,12 +14,10 @@ WARNING: The Attribute Information does not translate to standard English and is
 ### [d6](https://github.com/hrokr/little-pyprojects/tree/main/d6) (On hold. Somebody else did the same thing even with the same name. Dammit)
 A small command line interface (CLI) random number generator using [click](https://click.palletsprojects.com/en/8.0.x/quickstart/#basic-concepts-creating-a-command)
 
-<<<<<<< HEAD
 ### [Hypermodern Testcase]((https://github.com/hrokr/little-pyprojects/tree/main/hypermodern-testcase)) (working)
 A toy project with the cookiecutter of hypermodern python
 
 =======
->>>>>>> f6da5eae8dda02e91c4ae12cbf39c405a8192d17
 ### The Martian Weather Report (not started)
 Scraper to get last week of weather on Mars.
 
