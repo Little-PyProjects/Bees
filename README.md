@@ -1,7 +1,7 @@
 
 <p align="center">
 <b>Little PyProjects</b><br>
-Small projects to explore a datasets without a lot commitment.  <br><br>
+Small projects that either explore a dataset without a lot commitment or is somewhat more than a hello world.  <br><br>
 </p>
 
 ### [Arlington Traffic Lights](https://github.com/hrokr/little-pyprojects/tree/main/Arlington_Traffic_Cameras) (done)
@@ -14,12 +14,16 @@ WARNING: The Attribute Information does not translate to standard English and is
 ### [d6](https://github.com/hrokr/little-pyprojects/tree/main/d6) (On hold. Somebody else did the same thing even with the same name. Dammit)
 A small command line interface (CLI) random number generator using [click](https://click.palletsprojects.com/en/8.0.x/quickstart/#basic-concepts-creating-a-command)
 
-### [Hypermodern Cookbook](https://github.com/hrokr/little-pyprojects/tree/main/hypermodern-cookbook) (working)
-Cookbook of Claudio Jolowicz's [hypermodern python](https://cjolowicz.github.io/posts/hypermodern-python-01-setup) article and repo
-
 ### [Hypermodern Testcase]((https://github.com/hrokr/little-pyprojects/tree/main/hypermodern-testcase)) (working)
 A toy project with the cookiecutter of hypermodern python
 
 ### The Martian Weather Report (not started)
 Scraper to get last week of weather on Mars.
 
+*Datasets ready to play with:*
+
+* Bees 
+* Europe internet 
+* Iranian census data
+* NC by the numbers
+* SunSpots
