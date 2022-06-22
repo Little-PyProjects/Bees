@@ -17,7 +17,6 @@ A small command line interface (CLI) random number generator using [click](https
 ### [Hypermodern Testcase]((https://github.com/hrokr/little-pyprojects/tree/main/hypermodern-testcase)) (working)
 A toy project with the cookiecutter of hypermodern python
 
-=======
 ### The Martian Weather Report (not started)
 Scraper to get last week of weather on Mars.
 
