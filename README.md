@@ -7,6 +7,10 @@ Small projects that either explore a dataset without a lot commitment or is some
 ### [Arlington Traffic Lights](https://github.com/hrokr/little-pyprojects/tree/main/Arlington_Traffic_Cameras) (done)
 A quick plot of the traffic lights in Arlington, VA using follium. 
 
+
+### [Bees](images/updated_events.png) (done)
+Dash example using Bees dataset. A second dataset is included for the next round.
+
 ### [Divorce Prediction Model](https://github.com/hrokr/little-pyprojects/tree/main/Divorce) (working)
 Prediction models of divorce. The original work in Turkey by Dr. Mustafa Kemal Yöntem, Dr. Kemal Adem, Dr. Tahsin İlhan, and Serhat Kılıçarslan.
 WARNING: The Attribute Information does not translate to standard English and is often close to incomprehensible.
@@ -22,7 +26,6 @@ Scraper to get last week of weather on Mars.
 
 *Datasets ready to play with:*
 
-* Bees 
 * Europe internet 
 * Iranian census data
 * SunSpots
