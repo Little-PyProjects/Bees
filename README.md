@@ -24,8 +24,10 @@ A toy project with the cookiecutter of hypermodern python
 ### The Martian Weather Report (not started)
 Scraper to get last week of weather on Mars.
 
+### [SunSpots](https://github.com/hrokr/SunSpots) (At a milestone, taking a break)
+Two centuries of sun spot data.
+
 *Datasets ready to play with:*
 
 * Europe internet 
 * Iranian census data
-* SunSpots
