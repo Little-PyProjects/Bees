@@ -7,7 +7,6 @@ Small projects that either explore a dataset without a lot commitment or is some
 ### [Arlington Traffic Lights](https://github.com/hrokr/little-pyprojects/tree/main/Arlington_Traffic_Cameras) (done)
 A quick plot of the traffic lights in Arlington, VA using follium. 
 
-
 ### [Bees](images/updated_events.png) (done)
 Dash example using Bees dataset. A second dataset is included for the next round.
 
@@ -29,5 +28,8 @@ Two centuries of sun spot data.
 
 *Datasets ready to play with:*
 
+* Alternative Fuel Stations
+* Diamonds 
 * Europe internet 
 * Iranian census data
+  
