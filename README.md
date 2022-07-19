@@ -11,6 +11,9 @@ small projects that are somewhat more than a hello world.  <br><br>
 
  * ## [Bees](images/updated_events.png) (done)
     - Dash example using Bees dataset. A second dataset is included for a future round.
+ 
+ * ## [Diamonds](https://github.com/hrokr/little-pyprojects/tree/main/Diamonds) (working)
+    - small csv. Ideal for datasette and/or linear regression
 
  * ## [Divorce Prediction Model](https://github.com/hrokr/little-pyprojects/tree/main/Divorce) (working)
     - Prediction models of divorce. The original work in Turkey by Dr. Mustafa Kemal Yöntem, Dr. Kemal Adem, Dr. Tahsin İlhan, and Serhat Kılıçarslan.
@@ -29,7 +32,6 @@ WARNING: The Attribute Information does not translate to standard English and is
 <H3><p align="center">Datasets ready to play with</H3>
 
 * Alternative Fuel Stations
-* Diamonds - small csv. Ideal for datasette and/or linear regression
 * European internet 
 * Iranian census data
 * NYC Trip - small dataset in parquet format
