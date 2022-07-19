@@ -9,7 +9,7 @@ small projects that are somewhat more than a hello world.  <br><br>
  * ## [Arlington Traffic Lights](https://github.com/hrokr/little-pyprojects/tree/main/Arlington_Traffic_Cameras) (done)
     - A quick plot of the traffic lights in Arlington, VA using folium. 
 
- * ## [Bees](images/updated_events.png) (done)
+ * ## [Bees][https://github.com/hrokr/Little-Pyprojects/tree/main/Bees] (done)
     - Dash example using Bees dataset. A second dataset is included for a future round.
  
  * ## [Diamonds](https://github.com/hrokr/little-pyprojects/tree/main/Diamonds) (working)
