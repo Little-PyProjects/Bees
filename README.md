@@ -9,8 +9,11 @@ small projects that are somewhat more than a hello world.  <br><br>
  * ## [Arlington Traffic Lights](https://github.com/hrokr/little-pyprojects/tree/main/Arlington_Traffic_Cameras) (done)
     - A quick plot of the traffic lights in Arlington, VA using folium. 
 
- * ## [Bees](images/updated_events.png) (done)
+ * ## [Bees](https://github.com/hrokr/Little-Pyprojects/tree/main/Bees) (done)
     - Dash example using Bees dataset. A second dataset is included for a future round.
+ 
+ * ## [Diamonds](https://github.com/hrokr/little-pyprojects/tree/main/Diamonds) (working)
+    - small csv. Ideal for datasette and/or linear regression
 
  * ## [Divorce Prediction Model](https://github.com/hrokr/little-pyprojects/tree/main/Divorce) (working)
     - Prediction models of divorce. The original work in Turkey by Dr. Mustafa Kemal Yöntem, Dr. Kemal Adem, Dr. Tahsin İlhan, and Serhat Kılıçarslan.
@@ -29,7 +32,6 @@ WARNING: The Attribute Information does not translate to standard English and is
 <H3><p align="center">Datasets ready to play with</H3>
 
 * Alternative Fuel Stations
-* Diamonds - small csv. Ideal for datasette and/or linear regression
 * European internet 
 * Iranian census data
 * NYC Trip - small dataset in parquet format
