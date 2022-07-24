@@ -47,3 +47,6 @@ WARNING: The Attribute Information does not translate to standard English and is
  * [d6](https://github.com/hrokr/little-pyprojects/tree/main/d6) (On hold)
    - Somebody else did the same thing even with the same name. Dammit)
 A small command line interface (CLI) random number generator using [click](https://click.palletsprojects.com/en/8.0.x/quickstart/#basic-concepts-creating-a-command).
+   - Do Republicans really have [a fascination with transgender porn?](https://lawsuit.org/general-law/republicans-have-an-obsession-with-transgender-pornography/) 
+     - APIs are on GitHub
+     - [Prior art](https://public.tableau.com/app/profile/kristin1812/viz/TransgenderPornGoogleSearchPopularitybyMetroArea/DMAFemboy/) on Tableau Public
