@@ -29,7 +29,7 @@ WARNING: The Attribute Information does not translate to standard English and is
 
 ---
 
-<H3><p align="center">Datasets ready to play with</H3>
+<H3><p align="center">Datasets offline but ready to be played with</H3>
 
 * Alternative Fuel Stations
 * European internet 
@@ -43,6 +43,12 @@ WARNING: The Attribute Information does not translate to standard English and is
 
  * The Martian Weather Report 
    - Scraper to get last week of weather on Mars.
+
+
+
+---
+<H3><p align="center">Removed projects (at least for now)</H3>
+
 
  * [d6](https://github.com/hrokr/little-pyprojects/tree/main/d6) (On hold)
    - Somebody else did the same thing even with the same name. Dammit)
