@@ -16,7 +16,7 @@ Still, it's a good dataset.
 # Current situation:
 
 ## EDA
-### What I would call the fist pass is done. Key takeaways so far:
+### What I would call the first pass is done. Key takeaways so far:
  *  
  * jfkdlj
  * fjlkdjf
