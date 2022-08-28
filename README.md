@@ -22,6 +22,9 @@ WARNING: The Attribute Information does not translate to standard English and is
  * ## [Hypermodern Testcase](https://github.com/hrokr/little-pyprojects/hypermodern-testcase) (working)
     - A toy project with the cookiecutter of hypermodern python.
 
+ * ## [JediAdvisor](https://github.com/hrokr/JediAdvisor) (working)
+    - Thoughtful advice from a war that was a long time ago in a galaxy far, far away. Basically, this is a twitterbot that tweets an aphorism from the Clone Wars series each day.
+
  * ## [SunSpots](https://github.com/hrokr/SunSpots) (At a milestone, taking a break)
     - Two centuries of sun spot data.
 
