@@ -17,9 +17,9 @@ Still, it's a good dataset.
 
 ## EDA
 ### What I would call the first pass is done. Key takeaways so far:
- *  
+ * 73% of diamonds are round cut
+ * Oval, Pear, and Emerald are the next most popular, ranging between 6.3%-4.5%
  * jfkdlj
- * fjlkdjf
 
 <br>
 
