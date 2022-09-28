@@ -12,20 +12,20 @@ small projects that are somewhat more than a hello world.  <br><br>
  * ## [Bees](https://github.com/hrokr/Little-Pyprojects/tree/main/Bees) (done)
     - Dash example using Bees dataset. A second dataset is included for a future round.
  
- * ## [Diamonds](https://github.com/hrokr/little-pyprojects/tree/main/Diamonds) (working)
+ * ## [Diamonds](https://github.com/hrokr/little-pyprojects/tree/main/Diamonds) (Milestone)
     - small csv. Ideal for datasette and/or linear regression. Will likely be spun off later.
 
  * ## [Divorce Prediction Model](https://github.com/hrokr/little-pyprojects/tree/main/Divorce) (working)
     - Prediction models of divorce. The original work in Turkey by Dr. Mustafa Kemal Yöntem, Dr. Kemal Adem, Dr. Tahsin İlhan, and Serhat Kılıçarslan.
-WARNING: The Attribute Information does not translate to standard English and is often close to incomprehensible.
+WARNING: The Attribute Information (i.e., Statments) does not translate to standard English and is often close to incomprehensible.
 
  * ## [Hypermodern Testcase](https://github.com/hrokr/little-pyprojects/hypermodern-testcase) (working)
     - A toy project with the cookiecutter of hypermodern python.
 
  * ## [JediAdvisor](https://github.com/hrokr/JediAdvisor) (MVP)
-    - Thoughtful advice from a war that was a long time ago in a galaxy far, far away. Basically, this is a twitterbot that tweets an aphorism from the Clone Wars series each day. Tweets under @YourJediAdvisor
+    - Thoughtful advice from a war that was a long time ago in a galaxy far, far away. Basically, this is tweets an aphorism from the Clone Wars series each day. Tweets under @YourJediAdvisor
 
- * ## [SunSpots](https://github.com/hrokr/SunSpots) (At a milestone, taking a break)
+ * ## [SunSpots](https://github.com/hrokr/SunSpots) (Milestone)
     - Two centuries of sun spot data.
 
 <br>
