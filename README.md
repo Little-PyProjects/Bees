@@ -6,20 +6,20 @@
 small projects that are somewhat more than a hello world.  <br><br>
 </p>
 
- * ## [Arlington Traffic Lights](https://github.com/hrokr/little-pyprojects/tree/main/Arlington_Traffic_Cameras) (done)
+ * ## [Arlington Traffic Lights](https://github.com/hrokr/little-pyprojects/tree/main/Arlington_Traffic_Cameras) (Done)
     - A quick plot of the traffic lights in Arlington, VA using folium. 
 
- * ## [Bees](https://github.com/hrokr/Little-Pyprojects/tree/main/Bees) (done)
+ * ## [Bees](https://github.com/hrokr/Little-Pyprojects/tree/main/Bees) (Done)
     - Dash example using Bees dataset. A second dataset is included for a future round.
  
  * ## [Diamonds](https://github.com/hrokr/little-pyprojects/tree/main/Diamonds) (Milestone)
     - small csv. Ideal for datasette and/or linear regression. Will likely be spun off later.
 
- * ## [Divorce Prediction Model](https://github.com/hrokr/little-pyprojects/tree/main/Divorce) (working)
+ * ## [Divorce Prediction Model](https://github.com/hrokr/little-pyprojects/tree/main/Divorce) (Milestone)
     - Prediction models of divorce. The original work in Turkey by Dr. Mustafa Kemal Yöntem, Dr. Kemal Adem, Dr. Tahsin İlhan, and Serhat Kılıçarslan.
 WARNING: The Attribute Information (i.e., Statments) does not translate to standard English and is often close to incomprehensible.
 
- * ## [Hypermodern Testcase](https://github.com/hrokr/little-pyprojects/hypermodern-testcase) (working)
+ * ## [Hypermodern Testcase](https://github.com/hrokr/little-pyprojects/hypermodern-testcase) (Working)
     - A toy project with the cookiecutter of hypermodern python.
 
  * ## [JediAdvisor](https://github.com/hrokr/JediAdvisor) (MVP)
