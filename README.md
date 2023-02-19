@@ -43,8 +43,8 @@ WARNING: The Attribute Information (i.e., Statments) does not translate to stand
 
  * The Martian Weather Report 
    - Scraper to get last week of weather on Mars.
-
-
+   
+<br>
 
 ---
 <H3><p align="center">Removed projects (at least for now)</H3>
