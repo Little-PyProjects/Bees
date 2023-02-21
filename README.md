@@ -25,9 +25,6 @@ WARNING: The Attribute Information (i.e., Statments) does not translate to stand
  * ## [JediAdvisor](https://github.com/hrokr/JediAdvisor) (MVP)
     - Thoughtful advice from a war that was a long time ago in a galaxy far, far away. Basically, this is tweets an aphorism from the Clone Wars series each day. Tweets under @YourJediAdvisor
 
- * ## [SunSpots](https://github.com/hrokr/SunSpots) (Milestone)
-    - Two centuries of sun spot data.
-
 <br>
 
 ---
@@ -46,8 +43,8 @@ WARNING: The Attribute Information (i.e., Statments) does not translate to stand
 
  * The Martian Weather Report 
    - Scraper to get last week of weather on Mars.
-
-
+   
+<br>
 
 ---
 <H3><p align="center">Removed projects (at least for now)</H3>
