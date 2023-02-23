@@ -1,15 +1,16 @@
 # Diamonds
 
-I came across this dataset a while back while looking through the Harvard Business School's website. It was titled "Sarah Gets a Diamond". Two things came to mind. The first was that it would be good for a regression model. The second is harder for me to pin down. Part of it has to do with how odd picking out an engagement ring would be based strictly off the numbers. I get price because not everyone is of substantial means or can bank on high earning potential earnings, like the HBS grads can. The other is how very traditional this all is.
+I came across this dataset a while back while looking through I think the MBA website for either the Univerity of Virginia or Harvard website. It was titled "Sarah Gets a Diamond" and immediately two things came to mind. The first was that it would be good for a comarison of regression models.
 
-Still, it's a good dataset.
+The second is harder for me to pin down. In part it was how very traditional it was. The other part was how odd picking out an engagement ring would be based strictly off the numbers. I understand not everyone is of substantial means or can bank on high earning potential earnings like HBS grads can and so are price sensitive. But I can't imagine anyone just basing it off of either caret per dollar or some other decision making calculus. There's a lot of hopes and emotions tied up in that. And if there's not, that probably very telling. 
+
+Still, it's a good dataset though, in hindsight, I don't think this is the same data set and certainly not the one marked on HBS's site as that one has a paltry 6000 diamonds whereas this has just under 220,000 diamonds.
 
 <br>
 
 # Notes
- 1. Because it was getting way too long for a single notebook,  this project has been broken into three different notebooks: Data Wrangling, EDA, and Models.
- 2. Data for EDA and Models comes from a pickle file generated in the Data Wrangling notebook. Pickle files aren't secure. They allow unvalidated and potentially malicious code to run.   So, for those who approach life with a "F**k it, YOLO!" attitude, I commend your confidence. For the paranoid who think there is a malicious actor at every turn, I commend your caution. Simply delete the file and either run or step through the Data Wrangling notebook and new pickle file will be generated. You'll only need to do this once.
-
+ 1. Because it was getting way too long for a single notebook, this project has been broken into three different notebooks: Data Wrangling, EDA, and Models.
+ 2. Data for EDA and Models comes from a pickle file generated in the Data Wrangling notebook. Pickle files aren't secure. They allow unvalidated and potentially malicious code to run. So, for those who approach life with a "F**k it, YOLO!" attitude, I commend your confidence. For the paranoid who think there is a malicious actor at every turn, I respect your security awareness. Simply step through the code in the Data Wrangling notebook to assure yourself that the pickle file is free from any ill intent. You'll only need to do this once.
 
 <br>
 
@@ -18,7 +19,7 @@ Still, it's a good dataset.
 ## EDA
 ### What I would call the first pass is done. Key takeaways so far:
  * 73% of diamonds are round cut
- * Oval, Pear, and Emerald are the next most popular, ranging between 6.3%-4.5%
+ * Oval, Pear, and Emerald are the next most popular, ranging between 3%-6% each
  * jfkdlj
 
 <br>
@@ -49,7 +50,7 @@ Still, it's a good dataset.
   RMSE: 9536.786677216744
   R2  : 0.9262440179416279
   ```
-  * Decision Trees are marginally better than LR. Fast but max out at depth of 3. Overall, Decision Trees has a 13.3 % improvement over baseline in RMSE and a 10.9 % improvement in R2.
+  * Decision Trees are marginally better than LR. Fast but max out at depth of 3. Overall, Decision Trees has a 13.3% improvement over baseline in RMSE and a 10.9% improvement over the baseline R2.
 
   ```
   Not timed but about at fast as LR 
