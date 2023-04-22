@@ -1,9 +1,7 @@
 
 
 <H1><b><p align="center">Little PyProjects</b></H1>
-<p align="center">Small projects that either explore a dataset without a lot commitment or
-<p align="center">
-small projects that are somewhat more than a hello world.  <br><br>
+<p align="center">Small projects exploring datasets and libraries<p align="center">
 </p>
 
  * ## [Arlington Traffic Lights](https://github.com/hrokr/little-pyprojects/tree/main/Arlington_Traffic_Cameras) (Done)
@@ -23,7 +21,7 @@ WARNING: The Attribute Information (i.e., Statments) does not translate to stand
     - A toy project with the cookiecutter of hypermodern python.
 
  * ## [JediAdvisor](https://github.com/hrokr/JediAdvisor) (MVP)
-    - Thoughtful advice from a war that was a long time ago in a galaxy far, far away. Basically, this is tweets an aphorism from the Clone Wars series each day. Tweets under @YourJediAdvisor
+    - Thoughtful advice from a war that was a long time ago in a galaxy far, far away. Basically, this tweets an aphorism from the Clone Wars series each day. Tweeted under @YourJediAdvisor but no longer function due to Twitter now charging 41k/mo for access. Thanks, Elon. Dick.
 
 <br>
 
