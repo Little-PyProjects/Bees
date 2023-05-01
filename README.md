@@ -7,4 +7,4 @@
 
  * ## [Bees](https://github.com/hrokr/Little-Pyprojects/tree/main/Bees) (Done)
 
-    - A quick plot of the bees done in dash. Low stakes. 
+    - A quick plot of the bees done in dash.
