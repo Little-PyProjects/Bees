@@ -28,14 +28,22 @@
 
 
 
-<meta property="og:title" content="Blogs" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hugo-profile.netlify.app/blogs/" />
+<meta property="og:title" content="" />
+<meta property="og:description" content="Troubleshooting setting up a git rep containing the original files which are then symlinked to.
+Why I did this: I tried moving all the dot files to a separate folder that I will (eventually) want to set up as a git repo, and then push to the web for both teaching and backup purposes.
+But it didn&rsquo;t work. Bummer!
+So, after getting things back to where they were &ndash; twice, I&rsquo;m testing it with dummy file which I&rsquo;ll modify which I&rsquo;ll then append with the results." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hugo-profile.netlify.app/blogs/dotfiles-lessons-learned/" /><meta property="article:section" content="blogs" />
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Blogs"/>
-<meta name="twitter:description" content=""/>
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Troubleshooting setting up a git rep containing the original files which are then symlinked to.
+Why I did this: I tried moving all the dot files to a separate folder that I will (eventually) want to set up as a git repo, and then push to the web for both teaching and backup purposes.
+But it didn&rsquo;t work. Bummer!
+So, after getting things back to where they were &ndash; twice, I&rsquo;m testing it with dummy file which I&rsquo;ll modify which I&rsquo;ll then append with the results."/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -99,11 +107,14 @@
     }
 </style>
 
-<meta name="description" content="Blogs of The Data Stream">
-<link rel="stylesheet" href="/css/list.css" media="all">
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-5/all-5.15.4.js"></script>
 
   <title>
-Blogs | The Data Stream
+ | The Data Stream
 
   </title>
 </head>
@@ -138,9 +149,9 @@ Blogs | The Data Stream
             
             <a class="navbar-brand primary-font text-wrap" href="/">
                 
-                <img src="/fav.png" width="30" height="30"
+                <img src="/icon.png" width="30" height="30"
                     class="d-inline-block align-top">
-                InTheDataStream
+                Alex Rook
                 
             </a>
 
@@ -264,115 +275,271 @@ Blogs | The Data Stream
     </nav>
 </header>
 <div id="content">
-<div class="container pt-5" id="list-page">
-    <h2 class="text-center pb-2">Blogs</h2>
-    <div class="row">
-        
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-header">
-                        <a href="/blogs/the-last-unpredicted-tsunami/">
-                            <img src="/images/blogs/23-11-20.jpg" class="card-img-top" alt="When was the last unpredicted tsunami?">
-                        </a>
-                    </div>
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/blogs/the-last-unpredicted-tsunami/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="When was the last unpredicted tsunami?">When was the last …</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p>In preparation for building a model for earthquake initiated tsunami prediction, my thinking is what is needed data on earthquakes, tsunami, and ideally which earthquakes generated tsunami warnings as a check. No surprises here.
-But that got me wondering when was the last tsunami which there was no …</p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Nov 20, 2023</span>
-                        <a href="/blogs/the-last-unpredicted-tsunami/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                    </div>
-                </div>
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4"></h1>
+            <div class="text-center">
+               
+              <small>|</small>
+              Jan 1, 0001
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
             </div>
+          </div>
+          
+          <article class="page-content  p-2">
+          <h1 id="troubleshooting-setting-up-a-git-rep-containing-the-original-files-which-are">Troubleshooting setting up a git rep containing the original files which are</h1>
+<p>then symlinked to.</p>
+<h2 id="why-i-did-this">Why I did this:</h2>
+<p>I tried moving all the dot files to a separate folder that I will (eventually)
+want to set up as a git repo, and then push to the web for both teaching and
+backup purposes.</p>
+<p>But it didn&rsquo;t work. Bummer!</p>
+<p>So, after getting things back to where they were &ndash; twice, I&rsquo;m testing it with
+dummy file which I&rsquo;ll modify which I&rsquo;ll then append with the results. This is a
+lot better than going from a customized version of oh-my-zsh to vanilla bash
+with no tab completion and echoing of the current folder.</p>
+<p>I might have it&hellip; finally. Finally, being the result of way, way too much time
+spent working in order to get this.</p>
+<h2 id="anyway-what-finally-worked">Anyway, what (finally) worked:</h2>
+<p>this:         ln -s /Volumes/Codework/dotfiles/.test ~/.test
+instead of:   ln -s  ~/Volumes/Codework/dotfiles/.test ~/.test</p>
+<p>[EDIT]   ln -s ~/Volumes/Codework/dotfiles/.tmux.conf ~/Users/hrokr/.tmux.conf
+seems to have actually done the trick.</p>
+<p>Once that was done and verified with both Atom and Vim that the alias would open
+changes could be made which were reflected in the original, it was a pretty fast
+operation to replace .test with the (then moved) originals of the other files.</p>
+<p>Now, to do a git init</p>
+<h2 id="zsh-bad-assignment-while-trying-to-alias">zsh: bad assignment while trying to alias</h2>
+<p>Fixed by taking out the spaces around the &ldquo;=&rdquo;.  Apparently, zsh doesn&rsquo;t like
+wasted space.</p>
+<h2 id="vimrc-errors">.vimrc errors</h2>
+<p>&hellip; and neither does vim.</p>
+<h2 id="changing-the-font-and-font-size">changing the font and font size</h2>
+<p>This took a while because some fonts have long names (Droid Sans Mono for
+Powerline Nerd Font Complete:h18 &ndash; yeah looking at you. Arial, you&rsquo;re good).
+This get confounded when it looks like OS X truncates the name. For example,
+only Vim showed the full name; Fontbook didn&rsquo;t list the Complete as does Vim&rsquo;s
+picklist.</p>
+<p>What finally worked was:</p>
+<p><code>:set guifont=*</code></p>
+<p>&hellip; which brought up a picklist via Edit &ndash;&gt; Select Font. Then</p>
+<p><code>:set guifont?</code></p>
+<p>&hellip; which didn&rsquo;t work. What did work was modifing the .vimrc with this:</p>
+<p><code> if has(&lsquo;gui_running&rsquo;)
+set guifont=PASTED FONT AND SIZE HERE
+endif </code></p>
+<p>The pasted part you get by running this command, and pasting into the
+appropriate section above</p>
+<p><code>:put =&amp;guifont</code></p>
+<p>So, yeah, one more problem knocked down.</p>
+<h2 id="changing-the-color-scheme-in-vim">Changing the color scheme in vim</h2>
+<p>You should have a ~/.vim directory but will need a colors subdirectory. If you
+neither you can do it in one shot with:</p>
+<p><code>mkdir -p ~/.vim/colors</code></p>
+<h2 id="-is-the-tmuxconf-file-being-loaded-at-all">&hellip; is the ~/.tmux.conf file being loaded at all?</h2>
+<p>keybindings for splitting windows, reloading .conf file and the color theme
+settings don&rsquo;t seem to work. I took out the theme but I&rsquo;m not sure. Hot for
+Words must investigate. This may be due to broken symlinks. I say that because I
+keep the following for Vim</p>
+<p>&lsquo;The airline statusline funcref function(&lsquo;airline#extensions#ctrlp#apply&rsquo;) has
+already been added</p>
+<p>&hellip; but the line has been commented out. So, it looks like neither of these are
+loading. I tried to redo the symlinks with no effect. Then I deleted the
+symlink, renamed the file and touched .tmux.conf and made couple of quick
+changes which I did a cat on to confirm it worked, then reestablished the link,
+confirmed it worked and am now finally good to go.</p>
+<h2 id="dealing-with-the-vim-error-message">Dealing with the Vim error message</h2>
+<pre><code>The airline statusline funcref function('airline#extensions#mundo#statusline') has already been added.The airline statusline funcref function('airline#extensions#mundo#statusline') has already been added.
+</code></pre>
+<p>see: <a href="https://stackoverflow.com/questions/45040937/how-do-i-remove-duplicates-from-vim-scriptnames-file">https://stackoverflow.com/questions/45040937/how-do-i-remove-duplicates-from-vim-scriptnames-file</a></p>
+<h2 id="getting-the-bottom-line-to-display-correctly">Getting the bottom line to display correctly</h2>
+<p>The bottom line was in red no matter what I did and the formatting was jacked.
+This is what I get for a) not knowing tmux already and b) using someone else&rsquo;s
+.tmux.conf files. Or, rather some othere people&rsquo;s conf files.</p>
+<h3 id="-for-the-status-line-line-79">&hellip; for the status line (line 79)</h3>
+<pre><code>set -g status-left '#[fg=white](#S)'
+</code></pre>
+<h3 id="-for-the-status-line-line-19">&hellip; for the status line (line 19)</h3>
+<pre><code>set-window-option -g window-status-current-fg green
+</code></pre>
+<p>&hellip; I&rsquo;ll combine this into something a bit better in the future.</p>
+<h2 id="punchlist-the-first">Punchlist the First</h2>
+<p>Wherein it will be shown many of those details which are missing or deemed
+useless.</p>
+<ul>
+<li>
+<p>tmux shows user@computer, hh:mm and dd-month-yy &ndash; I&rsquo;m pretty sure I know that
+or can another way to let me know. Gotta go.</p>
+</li>
+<li>
+<p>tmux colors &ndash; jacked up.</p>
+</li>
+<li>
+<p>vim &ndash; solarized not found. I kinda like solarized but I think it&rsquo;s a little off
+I probably need to fix this.</p>
+</li>
+<li>
+<p>simlink for vimrc is gone. Easiest fix so far.</p>
+</li>
+<li>
+<p>tmux.conf and vimrc need to be gone over at least once.</p>
+</li>
+</ul>
+<p>&hellip; and the big one&hellip;</p>
+<p>still gotta learn tmux and vim</p>
+<h2 id="vimtutor----why-isnt-that-better-known">Vimtutor &ndash; why isn&rsquo;t that better known?!?</h2>
+<h2 id="code-folding-to-label-sections----well-thats-useful">Code folding to label sections &ndash; well, that&rsquo;s useful.</h2>
+<p>started with the zshrc file.</p>
+<h2 id="well-damn-how-do-i-remove-a-bunch-of-dotfiles-that-arent-tracked-anyway">Well, damn. How do I remove a bunch of dotfiles that aren&rsquo;t tracked anyway?</h2>
+<p>BLUF: git rm .vim -r</p>
+<p>Here is what happened: I was reading ProVim and the author had a .vim folder in
+addition to the .vimrc file. Considering that would be things like modules, it
+seemed like a good idea.</p>
+<p>Not so much.</p>
+<p>It turns out that since they are hosted on github anyway, that&rsquo;s something
+github doesn&rsquo;t like, which I guess makes sense. I moved the .vim folder back
+and still had to wrestle with getting the dot files gone. Still some issues in
+that font and spacing is messed up as well as missing line numbers (because I
+deleted the machiene&rsquo;s .vimrc) but it&rsquo;s better than nothing.</p>
+<h2 id="replacing-that-annoying-127-error-or-1-9-etc-in-oh-my-zsh">Replacing that annoying 127 error (or 1, 9, etc) in oh-my-zsh</h2>
+<p>In the .zshrc file to get that annoying 127 arrow to display as just a red x, do the following:</p>
+<pre tabindex="0"><code>POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
+</code></pre><p>The first line make the red x’s but also wrecks the checkmarks
+The second line fixes that.</p>
+<h2 id="default-shell-iterm2-and-how-it-just-doesnt-matter-what-commands-you-use-for-changing-the-shell-in-iterm---use-the-prefs">Default shell, iTerm2 and how IT JUST DOESN&rsquo;T MATTER what commands you use for changing the shell in iTerm - use the prefs.</h2>
+<p>a quick reminder:</p>
+<pre tabindex="0"><code>bin/zsh != /usr/local/bin/zsh
+</code></pre><p>just put that last part in the preferences &ndash;&gt; profile &ndash;&gt; command area and call it good.</p>
+<h2 id="punchlist---the-return">Punchlist - the return</h2>
+<p>Right, so after changing out the HD getting thigns back up to their previous state has been a whole lot faster but there are some details that still need to be knocked out. Namely:</p>
+<ul>
+<li>getting the dotfiles in good spot (i.e., a single place that I can version control and with everything working well)</li>
+<li>gettting the vim plugins to work well. This appears to be a config issue with Vundle</li>
+<li>.zshrc and oh-my-zsh startup script are messed up.</li>
+</ul>
+<p>On that last point, I get this:</p>
+<pre tabindex="0"><code>/Users/hrokr/.zshrc:source:69: not a directory: /Users/hrokr/.dotfiles/.zshrc/oh-my-zsh.sh
+</code></pre><p>But the .zshrc file is under <code>/Users/hrokr/.dotfiles/.zshrc</code></p>
+
+          </article>
         </div>
-        
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/blogs/datetimes/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Datetime. Why is always datetimes?">Datetime. Why is always …</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p>Let&rsquo;s start off with that it&rsquo;s totally possible I overlooked something here.
-I&rsquo;m working on NOAA&rsquo;s tsunami data. I want to combine &lsquo;Year&rsquo;, &lsquo;Mo&rsquo;, &lsquo;Dy&rsquo;, &lsquo;Hr&rsquo;, &lsquo;Mn&rsquo;, &lsquo;Sec&rsquo; columns together as a datetime. …</p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Nov 19, 2023</span>
-                        <a href="/blogs/datetimes/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                    </div>
-                </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-i-did-this">Why I did this:</a></li>
+    <li><a href="#anyway-what-finally-worked">Anyway, what (finally) worked:</a></li>
+    <li><a href="#zsh-bad-assignment-while-trying-to-alias">zsh: bad assignment while trying to alias</a></li>
+    <li><a href="#vimrc-errors">.vimrc errors</a></li>
+    <li><a href="#changing-the-font-and-font-size">changing the font and font size</a></li>
+    <li><a href="#changing-the-color-scheme-in-vim">Changing the color scheme in vim</a></li>
+    <li><a href="#-is-the-tmuxconf-file-being-loaded-at-all">&hellip; is the ~/.tmux.conf file being loaded at all?</a></li>
+    <li><a href="#dealing-with-the-vim-error-message">Dealing with the Vim error message</a></li>
+    <li><a href="#getting-the-bottom-line-to-display-correctly">Getting the bottom line to display correctly</a>
+      <ul>
+        <li><a href="#-for-the-status-line-line-79">&hellip; for the status line (line 79)</a></li>
+        <li><a href="#-for-the-status-line-line-19">&hellip; for the status line (line 19)</a></li>
+      </ul>
+    </li>
+    <li><a href="#punchlist-the-first">Punchlist the First</a></li>
+    <li><a href="#vimtutor----why-isnt-that-better-known">Vimtutor &ndash; why isn&rsquo;t that better known?!?</a></li>
+    <li><a href="#code-folding-to-label-sections----well-thats-useful">Code folding to label sections &ndash; well, that&rsquo;s useful.</a></li>
+    <li><a href="#well-damn-how-do-i-remove-a-bunch-of-dotfiles-that-arent-tracked-anyway">Well, damn. How do I remove a bunch of dotfiles that aren&rsquo;t tracked anyway?</a></li>
+    <li><a href="#replacing-that-annoying-127-error-or-1-9-etc-in-oh-my-zsh">Replacing that annoying 127 error (or 1, 9, etc) in oh-my-zsh</a></li>
+    <li><a href="#default-shell-iterm2-and-how-it-just-doesnt-matter-what-commands-you-use-for-changing-the-shell-in-iterm---use-the-prefs">Default shell, iTerm2 and how IT JUST DOESN&rsquo;T MATTER what commands you use for changing the shell in iTerm - use the prefs.</a></li>
+    <li><a href="#punchlist---the-return">Punchlist - the return</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=&url=https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fdotfiles-lessons-learned%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=: https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fdotfiles-lessons-learned%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=&amp;body=Check%20out%20this%20site https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fdotfiles-lessons-learned%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
+          </aside>
+          
         </div>
-        
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/blogs/one-of-these-things-is-not-like-the-other/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="One of these things is not like the other">One of these things is …</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p>Just to make it clear, this is mostly as a matter of record and as a reminder to myself. I like this hugo theme but there is some excess stuff. I&rsquo;m not a front-end developer, so it typically takes me a while to figure out what I suppose is a pretty easy thing.
-Anyway, notice this blue link …</p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Nov 5, 2023</span>
-                        <a href="/blogs/one-of-these-things-is-not-like-the-other/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row justify-content-center">
-            <div class="col-auto m-3">
-                
-    <ul class="pagination pagination-default">
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
-      </li>
-      <li class="page-item">
-        <a href="/blogs/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
-      </li>
-      <li class="page-item">
-        <a href="/blogs/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
-      </li>
-      <li class="page-item">
-        <a href="/blogs/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
-      </li>
-      <li class="page-item">
-        <a href="/blogs/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
-      </li>
-      <li class="page-item">
-        <a href="/blogs/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/blogs/page/5/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+
+<script src="/js/readingTime.js"></script>
+
+
 
   </div><footer>
     <div class="container py-3" id="recent-posts">

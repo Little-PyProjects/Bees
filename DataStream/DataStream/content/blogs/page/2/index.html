@@ -138,9 +138,9 @@ Blogs | The Data Stream
             
             <a class="navbar-brand primary-font text-wrap" href="/">
                 
-                <img src="/fav.png" width="30" height="30"
+                <img src="/icon.png" width="30" height="30"
                     class="d-inline-block align-top">
-                InTheDataStream
+                Alex Rook
                 
             </a>
 
@@ -272,24 +272,18 @@ Blogs | The Data Stream
             <div class="card-columns">
                 <div class="card h-100">
                     
-                    <div class="card-header">
-                        <a href="/blogs/the-last-unpredicted-tsunami/">
-                            <img src="/images/blogs/23-11-20.jpg" class="card-img-top" alt="When was the last unpredicted tsunami?">
-                        </a>
-                    </div>
-                    
                     <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/blogs/the-last-unpredicted-tsunami/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="When was the last unpredicted tsunami?">When was the last …</h5>
+                        <a href="/blogs/renaming-apple-recordings-in-bulk/" class="primary-font card-title">
+                            <h5 class="card-title bg-transparent" title="Using exiftool to rename a folder of files based on creation date">Using exiftool to rename …</h5>
                         </a>
                         <div class="card-text secondary-font">
-                            <p>In preparation for building a model for earthquake initiated tsunami prediction, my thinking is what is needed data on earthquakes, tsunami, and ideally which earthquakes generated tsunami warnings as a check. No surprises here.
-But that got me wondering when was the last tsunami which there was no …</p>
+                            <p>I have a lot of recordings on my iPhone. If you have Location Services turned on, they&rsquo;ll get saved something like &ldquo;Home 14&rdquo; or similar. Mine is set to &lsquo;Never&rsquo; and yet this is, for some reason, still an issue.
+While knowing the location is nice, it really isn&rsquo;t …</p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Nov 20, 2023</span>
-                        <a href="/blogs/the-last-unpredicted-tsunami/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                        <span class="float-start bg-transparent">Nov 2, 2023</span>
+                        <a href="/blogs/renaming-apple-recordings-in-bulk/" class="float-end btn btn-outline-info btn-sm">Read</a>
                     </div>
                 </div>
             </div>
@@ -300,17 +294,17 @@ But that got me wondering when was the last tsunami which there was no …</p>
                 <div class="card h-100">
                     
                     <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/blogs/datetimes/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Datetime. Why is always datetimes?">Datetime. Why is always …</h5>
+                        <a href="/blogs/heard-back-from-nga/" class="primary-font card-title">
+                            <h5 class="card-title bg-transparent" title="Heard Back From NGA">Heard Back From NGA</h5>
                         </a>
                         <div class="card-text secondary-font">
-                            <p>Let&rsquo;s start off with that it&rsquo;s totally possible I overlooked something here.
-I&rsquo;m working on NOAA&rsquo;s tsunami data. I want to combine &lsquo;Year&rsquo;, &lsquo;Mo&rsquo;, &lsquo;Dy&rsquo;, &lsquo;Hr&rsquo;, &lsquo;Mn&rsquo;, &lsquo;Sec&rsquo; columns together as a datetime. …</p>
+                            <p>Received email from NGA. The answer seemed a mix of low priority, noncommittal, and &ldquo;this is the way it&rsquo;s always been done&rdquo; justifications. I asked for clarification.
+If this goes nowhere, I&rsquo;ll make changes and provide them but focus on getting it on Kaggle first. An option …</p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Nov 19, 2023</span>
-                        <a href="/blogs/datetimes/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                        <span class="float-start bg-transparent">Jun 15, 2023</span>
+                        <a href="/blogs/heard-back-from-nga/" class="float-end btn btn-outline-info btn-sm">Read</a>
                     </div>
                 </div>
             </div>
@@ -321,17 +315,18 @@ I&rsquo;m working on NOAA&rsquo;s tsunami data. I want to combine &lsquo;Year&rs
                 <div class="card h-100">
                     
                     <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/blogs/one-of-these-things-is-not-like-the-other/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="One of these things is not like the other">One of these things is …</h5>
+                        <a href="/blogs/a-glitchy-detail-with-pandas-chaining/" class="primary-font card-title">
+                            <h5 class="card-title bg-transparent" title="A Glitchy Detail With Pandas Chaining">A Glitchy Detail With …</h5>
                         </a>
                         <div class="card-text secondary-font">
-                            <p>Just to make it clear, this is mostly as a matter of record and as a reminder to myself. I like this hugo theme but there is some excess stuff. I&rsquo;m not a front-end developer, so it typically takes me a while to figure out what I suppose is a pretty easy thing.
-Anyway, notice this blue link …</p>
+                            <p>If you&rsquo;re using chaining in pandas to pipeline a .csv, order can play a factor. Specifically, with filling in NaNs and reordering column names. It has to be done in that order.
+So, this works:
+diamonds = (pd.read_csv(&#34;../data/diamonds_raw.csv&#34;, index_col=[0]) .drop([&#39;date&#39;, …</p>
                         </div>
                     </div>
                     <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Nov 5, 2023</span>
-                        <a href="/blogs/one-of-these-things-is-not-like-the-other/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                        <span class="float-start bg-transparent">Feb 23, 2023</span>
+                        <a href="/blogs/a-glitchy-detail-with-pandas-chaining/" class="float-end btn btn-outline-info btn-sm">Read</a>
                     </div>
                 </div>
             </div>
@@ -341,17 +336,17 @@ Anyway, notice this blue link …</p>
             <div class="col-auto m-3">
                 
     <ul class="pagination pagination-default">
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+      <li class="page-item">
+        <a href="/blogs/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/blogs/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+        <a href="/blogs/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/blogs/" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 2" class="page-link" role="button">2</a>
       </li>
       <li class="page-item">
         <a href="/blogs/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
@@ -363,7 +358,7 @@ Anyway, notice this blue link …</p>
         <a href="/blogs/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
       </li>
       <li class="page-item">
-        <a href="/blogs/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+        <a href="/blogs/page/3/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
         <a href="/blogs/page/5/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>

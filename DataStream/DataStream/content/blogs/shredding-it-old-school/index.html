@@ -28,14 +28,18 @@
 
 
 
-<meta property="og:title" content="Blogs" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://hugo-profile.netlify.app/blogs/" />
+<meta property="og:title" content="Shredding It Old School" />
+<meta property="og:description" content="I was watching the Clone Wars with The Kid. At the beginning of most of the episodes there is an aphorism and most I think are pretty good. And, not that I think the folks in Ukraine would need this or read it, but it did make me think they might be motivational and would make a good &ldquo;little pyproject&rdquo;.
+So I did a quick search, found a list, and downloaded it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hugo-profile.netlify.app/blogs/shredding-it-old-school/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2022-08-09T13:46:31-05:00" />
+<meta property="article:modified_time" content="2022-08-09T13:46:31-05:00" />
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Blogs"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Shredding It Old School"/>
+<meta name="twitter:description" content="I was watching the Clone Wars with The Kid. At the beginning of most of the episodes there is an aphorism and most I think are pretty good. And, not that I think the folks in Ukraine would need this or read it, but it did make me think they might be motivational and would make a good &ldquo;little pyproject&rdquo;.
+So I did a quick search, found a list, and downloaded it."/>
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -99,11 +103,14 @@
     }
 </style>
 
-<meta name="description" content="Blogs of The Data Stream">
-<link rel="stylesheet" href="/css/list.css" media="all">
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-5/all-5.15.4.js"></script>
 
   <title>
-Blogs | The Data Stream
+Shredding It Old School | The Data Stream
 
   </title>
 </head>
@@ -138,9 +145,9 @@ Blogs | The Data Stream
             
             <a class="navbar-brand primary-font text-wrap" href="/">
                 
-                <img src="/fav.png" width="30" height="30"
+                <img src="/icon.png" width="30" height="30"
                     class="d-inline-block align-top">
-                InTheDataStream
+                Alex Rook
                 
             </a>
 
@@ -264,115 +271,145 @@ Blogs | The Data Stream
     </nav>
 </header>
 <div id="content">
-<div class="container pt-5" id="list-page">
-    <h2 class="text-center pb-2">Blogs</h2>
-    <div class="row">
-        
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-header">
-                        <a href="/blogs/the-last-unpredicted-tsunami/">
-                            <img src="/images/blogs/23-11-20.jpg" class="card-img-top" alt="When was the last unpredicted tsunami?">
-                        </a>
-                    </div>
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/blogs/the-last-unpredicted-tsunami/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="When was the last unpredicted tsunami?">When was the last …</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p>In preparation for building a model for earthquake initiated tsunami prediction, my thinking is what is needed data on earthquakes, tsunami, and ideally which earthquakes generated tsunami warnings as a check. No surprises here.
-But that got me wondering when was the last tsunami which there was no …</p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Nov 20, 2023</span>
-                        <a href="/blogs/the-last-unpredicted-tsunami/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                    </div>
-                </div>
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">Shredding It Old School</h1>
+            <div class="text-center">
+               
+              <small>|</small>
+              Aug 9, 2022
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
             </div>
+          </div>
+          
+          <article class="page-content  p-2">
+          <p>I was watching the Clone Wars with The Kid. At the beginning of most of the episodes there is an aphorism and most I think are pretty good. And, not that I think the folks in Ukraine would need this or read it, but it did make me think they might be motivational and would make a good &ldquo;little pyproject&rdquo;.</p>
+<p>So I did a quick search, <a href="http://www.sagespeculation.com/2017/08/01/star-wars-the-clone-wars-episode-opening-quotes">found a list</a>, and downloaded it. It looked like this:</p>
+<pre tabindex="0"><code>01×01 – Ambush:  Great leaders inspire greatness in others.
+
+01×02 – Rising Malevolence: Belief is not a matter of choice, but of conviction.
+
+01×03 – Shadow of Malevolence: Easy is the path to wisdom for those not blinded by ego.
+
+01×04 – Destroy Malevolence: A plan is only as good as those who see it through.
+</code></pre><p>I was ok with keeping the colon and the season/episode numbers (though in the end I got rid of them too). I didn&rsquo;t want the episode in the title though. Here&rsquo;s a quick fix but I&rsquo;m sure there is an even faster way.</p>
+<ul>
+<li>Positioned on the dash <code>dt:</code> then drop a few lines down which vim automatically selected on the next dash.</li>
+<li>Press  <code>.</code> to repeat the command.</li>
+</ul>
+<p>When that was done and saved, I wanted to take out the blank lines. Sed makes a one liner of this with</p>
+<pre tabindex="0"><code>sed -i &#34;&#34; &#39;/^[[:space:]]*$/d&#39; &lt;filename&gt;
+</code></pre><p>And done. It took me longer to write this than do it.</p>
+
+          </article>
         </div>
-        
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/blogs/datetimes/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="Datetime. Why is always datetimes?">Datetime. Why is always …</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p>Let&rsquo;s start off with that it&rsquo;s totally possible I overlooked something here.
-I&rsquo;m working on NOAA&rsquo;s tsunami data. I want to combine &lsquo;Year&rsquo;, &lsquo;Mo&rsquo;, &lsquo;Dy&rsquo;, &lsquo;Hr&rsquo;, &lsquo;Mn&rsquo;, &lsquo;Sec&rsquo; columns together as a datetime. …</p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Nov 19, 2023</span>
-                        <a href="/blogs/datetimes/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                    </div>
-                </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents"></nav>
+              </div>
+          </aside>
+          
+
+          
+          <aside class="tags">
+            <h5>Tags</h5>
+            <ul class="tags-ul list-unstyled list-inline">
+              
+              <li class="list-inline-item"><a href="https://hugo-profile.netlify.app/tags/sed" target="_blank">sed</a></li>
+              
+              <li class="list-inline-item"><a href="https://hugo-profile.netlify.app/tags/vim" target="_blank">vim</a></li>
+              
+              <li class="list-inline-item"><a href="https://hugo-profile.netlify.app/tags/munging-data" target="_blank">munging data</a></li>
+              
+              <li class="list-inline-item"><a href="https://hugo-profile.netlify.app/tags/jedi-advisor" target="_blank">Jedi advisor</a></li>
+              
+            </ul>
+          </aside>
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=Shredding%20It%20Old%20School&url=https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fshredding-it-old-school%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=Shredding%20It%20Old%20School: https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fshredding-it-old-school%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=Shredding%20It%20Old%20School&amp;body=Check%20out%20this%20site https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fshredding-it-old-school%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
+          </aside>
+          
         </div>
-        
-        <div class="col-lg-4 col-md-6 my-3">
-            <div class="card-columns">
-                <div class="card h-100">
-                    
-                    <div class="card-body bg-transparent p-4 shadow-sm">
-                        <a href="/blogs/one-of-these-things-is-not-like-the-other/" class="primary-font card-title">
-                            <h5 class="card-title bg-transparent" title="One of these things is not like the other">One of these things is …</h5>
-                        </a>
-                        <div class="card-text secondary-font">
-                            <p>Just to make it clear, this is mostly as a matter of record and as a reminder to myself. I like this hugo theme but there is some excess stuff. I&rsquo;m not a front-end developer, so it typically takes me a while to figure out what I suppose is a pretty easy thing.
-Anyway, notice this blue link …</p>
-                        </div>
-                    </div>
-                    <div class="mt-auto post-footer bg-transparent py-3">
-                        <span class="float-start bg-transparent">Nov 5, 2023</span>
-                        <a href="/blogs/one-of-these-things-is-not-like-the-other/" class="float-end btn btn-outline-info btn-sm">Read</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row justify-content-center">
-            <div class="col-auto m-3">
-                
-    <ul class="pagination pagination-default">
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
-      </li>
-      <li class="page-item">
-        <a href="/blogs/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
-      </li>
-      <li class="page-item">
-        <a href="/blogs/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
-      </li>
-      <li class="page-item">
-        <a href="/blogs/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
-      </li>
-      <li class="page-item">
-        <a href="/blogs/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
-      </li>
-      <li class="page-item">
-        <a href="/blogs/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/blogs/page/5/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+
+<script src="/js/readingTime.js"></script>
+
+
 
   </div><footer>
     <div class="container py-3" id="recent-posts">
