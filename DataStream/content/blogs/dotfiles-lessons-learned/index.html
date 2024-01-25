@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=/icon.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Troubleshooting setting up a git rep containing the original files which are then symlinked to.
+Why I did this: I tried moving all the dot files to a separate folder that I will (eventually) want to set up as a git repo, and then push to the web for both teaching and backup purposes.
+But it didn&rsquo;t work. Bummer!
+So, after getting things back to where they were &ndash; twice, I&rsquo;m testing it with dummy file which I&rsquo;ll modify which I&rsquo;ll then append with the results." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hugo-profile.netlify.app/blogs/dotfiles-lessons-learned/" /><meta property="article:section" content="blogs" />
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Troubleshooting setting up a git rep containing the original files which are then symlinked to.
+Why I did this: I tried moving all the dot files to a separate folder that I will (eventually) want to set up as a git repo, and then push to the web for both teaching and backup purposes.
+But it didn&rsquo;t work. Bummer!
+So, after getting things back to where they were &ndash; twice, I&rsquo;m testing it with dummy file which I&rsquo;ll modify which I&rsquo;ll then append with the results."/>
+
+
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+
+
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        width: .5em;
+        height: .5em;
+        background-color: var(--background-color);
+    }
+    
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px var(--background-color);
+        border-radius: 1rem;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background-color: var(--secondary-color);
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+<meta name="description" content="">
+<link rel="stylesheet" href="/css/single.css">
+
+
+<script defer src="/fontawesome-5/all-5.15.4.js"></script>
+
+  <title>
+ | The Data Stream
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+<header>
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                <img src="/icon.png" width="30" height="30"
+                    class="d-inline-block align-top">
+                Alex Rook
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder="Ctrl + k"
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder="Ctrl + k" aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+
+                    
+
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#projects"
+                            aria-label="projects">
+                            Projects
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#achievements"
+                            aria-label="achievements">
+                            Achievements
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#education"
+                            aria-label="education">
+                            Education
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#contact"
+                            aria-label="contact">
+                            Contact
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/blogs" title="">
+                            
+                            Blog
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="" title="">
+                            
+                            
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4"></h1>
+            <div class="text-center">
+               
+              <small>|</small>
+              Jan 1, 0001
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <article class="page-content  p-2">
+          <h1 id="troubleshooting-setting-up-a-git-rep-containing-the-original-files-which-are">Troubleshooting setting up a git rep containing the original files which are</h1>
+<p>then symlinked to.</p>
+<h2 id="why-i-did-this">Why I did this:</h2>
+<p>I tried moving all the dot files to a separate folder that I will (eventually)
+want to set up as a git repo, and then push to the web for both teaching and
+backup purposes.</p>
+<p>But it didn&rsquo;t work. Bummer!</p>
+<p>So, after getting things back to where they were &ndash; twice, I&rsquo;m testing it with
+dummy file which I&rsquo;ll modify which I&rsquo;ll then append with the results. This is a
+lot better than going from a customized version of oh-my-zsh to vanilla bash
+with no tab completion and echoing of the current folder.</p>
+<p>I might have it&hellip; finally. Finally, being the result of way, way too much time
+spent working in order to get this.</p>
+<h2 id="anyway-what-finally-worked">Anyway, what (finally) worked:</h2>
+<p>this:         ln -s /Volumes/Codework/dotfiles/.test ~/.test
+instead of:   ln -s  ~/Volumes/Codework/dotfiles/.test ~/.test</p>
+<p>[EDIT]   ln -s ~/Volumes/Codework/dotfiles/.tmux.conf ~/Users/hrokr/.tmux.conf
+seems to have actually done the trick.</p>
+<p>Once that was done and verified with both Atom and Vim that the alias would open
+changes could be made which were reflected in the original, it was a pretty fast
+operation to replace .test with the (then moved) originals of the other files.</p>
+<p>Now, to do a git init</p>
+<h2 id="zsh-bad-assignment-while-trying-to-alias">zsh: bad assignment while trying to alias</h2>
+<p>Fixed by taking out the spaces around the &ldquo;=&rdquo;.  Apparently, zsh doesn&rsquo;t like
+wasted space.</p>
+<h2 id="vimrc-errors">.vimrc errors</h2>
+<p>&hellip; and neither does vim.</p>
+<h2 id="changing-the-font-and-font-size">changing the font and font size</h2>
+<p>This took a while because some fonts have long names (Droid Sans Mono for
+Powerline Nerd Font Complete:h18 &ndash; yeah looking at you. Arial, you&rsquo;re good).
+This get confounded when it looks like OS X truncates the name. For example,
+only Vim showed the full name; Fontbook didn&rsquo;t list the Complete as does Vim&rsquo;s
+picklist.</p>
+<p>What finally worked was:</p>
+<p><code>:set guifont=*</code></p>
+<p>&hellip; which brought up a picklist via Edit &ndash;&gt; Select Font. Then</p>
+<p><code>:set guifont?</code></p>
+<p>&hellip; which didn&rsquo;t work. What did work was modifing the .vimrc with this:</p>
+<p><code> if has(&lsquo;gui_running&rsquo;)
+set guifont=PASTED FONT AND SIZE HERE
+endif </code></p>
+<p>The pasted part you get by running this command, and pasting into the
+appropriate section above</p>
+<p><code>:put =&amp;guifont</code></p>
+<p>So, yeah, one more problem knocked down.</p>
+<h2 id="changing-the-color-scheme-in-vim">Changing the color scheme in vim</h2>
+<p>You should have a ~/.vim directory but will need a colors subdirectory. If you
+neither you can do it in one shot with:</p>
+<p><code>mkdir -p ~/.vim/colors</code></p>
+<h2 id="-is-the-tmuxconf-file-being-loaded-at-all">&hellip; is the ~/.tmux.conf file being loaded at all?</h2>
+<p>keybindings for splitting windows, reloading .conf file and the color theme
+settings don&rsquo;t seem to work. I took out the theme but I&rsquo;m not sure. Hot for
+Words must investigate. This may be due to broken symlinks. I say that because I
+keep the following for Vim</p>
+<p>&lsquo;The airline statusline funcref function(&lsquo;airline#extensions#ctrlp#apply&rsquo;) has
+already been added</p>
+<p>&hellip; but the line has been commented out. So, it looks like neither of these are
+loading. I tried to redo the symlinks with no effect. Then I deleted the
+symlink, renamed the file and touched .tmux.conf and made couple of quick
+changes which I did a cat on to confirm it worked, then reestablished the link,
+confirmed it worked and am now finally good to go.</p>
+<h2 id="dealing-with-the-vim-error-message">Dealing with the Vim error message</h2>
+<pre><code>The airline statusline funcref function('airline#extensions#mundo#statusline') has already been added.The airline statusline funcref function('airline#extensions#mundo#statusline') has already been added.
+</code></pre>
+<p>see: <a href="https://stackoverflow.com/questions/45040937/how-do-i-remove-duplicates-from-vim-scriptnames-file">https://stackoverflow.com/questions/45040937/how-do-i-remove-duplicates-from-vim-scriptnames-file</a></p>
+<h2 id="getting-the-bottom-line-to-display-correctly">Getting the bottom line to display correctly</h2>
+<p>The bottom line was in red no matter what I did and the formatting was jacked.
+This is what I get for a) not knowing tmux already and b) using someone else&rsquo;s
+.tmux.conf files. Or, rather some othere people&rsquo;s conf files.</p>
+<h3 id="-for-the-status-line-line-79">&hellip; for the status line (line 79)</h3>
+<pre><code>set -g status-left '#[fg=white](#S)'
+</code></pre>
+<h3 id="-for-the-status-line-line-19">&hellip; for the status line (line 19)</h3>
+<pre><code>set-window-option -g window-status-current-fg green
+</code></pre>
+<p>&hellip; I&rsquo;ll combine this into something a bit better in the future.</p>
+<h2 id="punchlist-the-first">Punchlist the First</h2>
+<p>Wherein it will be shown many of those details which are missing or deemed
+useless.</p>
+<ul>
+<li>
+<p>tmux shows user@computer, hh:mm and dd-month-yy &ndash; I&rsquo;m pretty sure I know that
+or can another way to let me know. Gotta go.</p>
+</li>
+<li>
+<p>tmux colors &ndash; jacked up.</p>
+</li>
+<li>
+<p>vim &ndash; solarized not found. I kinda like solarized but I think it&rsquo;s a little off
+I probably need to fix this.</p>
+</li>
+<li>
+<p>simlink for vimrc is gone. Easiest fix so far.</p>
+</li>
+<li>
+<p>tmux.conf and vimrc need to be gone over at least once.</p>
+</li>
+</ul>
+<p>&hellip; and the big one&hellip;</p>
+<p>still gotta learn tmux and vim</p>
+<h2 id="vimtutor----why-isnt-that-better-known">Vimtutor &ndash; why isn&rsquo;t that better known?!?</h2>
+<h2 id="code-folding-to-label-sections----well-thats-useful">Code folding to label sections &ndash; well, that&rsquo;s useful.</h2>
+<p>started with the zshrc file.</p>
+<h2 id="well-damn-how-do-i-remove-a-bunch-of-dotfiles-that-arent-tracked-anyway">Well, damn. How do I remove a bunch of dotfiles that aren&rsquo;t tracked anyway?</h2>
+<p>BLUF: git rm .vim -r</p>
+<p>Here is what happened: I was reading ProVim and the author had a .vim folder in
+addition to the .vimrc file. Considering that would be things like modules, it
+seemed like a good idea.</p>
+<p>Not so much.</p>
+<p>It turns out that since they are hosted on github anyway, that&rsquo;s something
+github doesn&rsquo;t like, which I guess makes sense. I moved the .vim folder back
+and still had to wrestle with getting the dot files gone. Still some issues in
+that font and spacing is messed up as well as missing line numbers (because I
+deleted the machiene&rsquo;s .vimrc) but it&rsquo;s better than nothing.</p>
+<h2 id="replacing-that-annoying-127-error-or-1-9-etc-in-oh-my-zsh">Replacing that annoying 127 error (or 1, 9, etc) in oh-my-zsh</h2>
+<p>In the .zshrc file to get that annoying 127 arrow to display as just a red x, do the following:</p>
+<pre tabindex="0"><code>POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
+</code></pre><p>The first line make the red x’s but also wrecks the checkmarks
+The second line fixes that.</p>
+<h2 id="default-shell-iterm2-and-how-it-just-doesnt-matter-what-commands-you-use-for-changing-the-shell-in-iterm---use-the-prefs">Default shell, iTerm2 and how IT JUST DOESN&rsquo;T MATTER what commands you use for changing the shell in iTerm - use the prefs.</h2>
+<p>a quick reminder:</p>
+<pre tabindex="0"><code>bin/zsh != /usr/local/bin/zsh
+</code></pre><p>just put that last part in the preferences &ndash;&gt; profile &ndash;&gt; command area and call it good.</p>
+<h2 id="punchlist---the-return">Punchlist - the return</h2>
+<p>Right, so after changing out the HD getting thigns back up to their previous state has been a whole lot faster but there are some details that still need to be knocked out. Namely:</p>
+<ul>
+<li>getting the dotfiles in good spot (i.e., a single place that I can version control and with everything working well)</li>
+<li>gettting the vim plugins to work well. This appears to be a config issue with Vundle</li>
+<li>.zshrc and oh-my-zsh startup script are messed up.</li>
+</ul>
+<p>On that last point, I get this:</p>
+<pre tabindex="0"><code>/Users/hrokr/.zshrc:source:69: not a directory: /Users/hrokr/.dotfiles/.zshrc/oh-my-zsh.sh
+</code></pre><p>But the .zshrc file is under <code>/Users/hrokr/.dotfiles/.zshrc</code></p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-i-did-this">Why I did this:</a></li>
+    <li><a href="#anyway-what-finally-worked">Anyway, what (finally) worked:</a></li>
+    <li><a href="#zsh-bad-assignment-while-trying-to-alias">zsh: bad assignment while trying to alias</a></li>
+    <li><a href="#vimrc-errors">.vimrc errors</a></li>
+    <li><a href="#changing-the-font-and-font-size">changing the font and font size</a></li>
+    <li><a href="#changing-the-color-scheme-in-vim">Changing the color scheme in vim</a></li>
+    <li><a href="#-is-the-tmuxconf-file-being-loaded-at-all">&hellip; is the ~/.tmux.conf file being loaded at all?</a></li>
+    <li><a href="#dealing-with-the-vim-error-message">Dealing with the Vim error message</a></li>
+    <li><a href="#getting-the-bottom-line-to-display-correctly">Getting the bottom line to display correctly</a>
+      <ul>
+        <li><a href="#-for-the-status-line-line-79">&hellip; for the status line (line 79)</a></li>
+        <li><a href="#-for-the-status-line-line-19">&hellip; for the status line (line 19)</a></li>
+      </ul>
+    </li>
+    <li><a href="#punchlist-the-first">Punchlist the First</a></li>
+    <li><a href="#vimtutor----why-isnt-that-better-known">Vimtutor &ndash; why isn&rsquo;t that better known?!?</a></li>
+    <li><a href="#code-folding-to-label-sections----well-thats-useful">Code folding to label sections &ndash; well, that&rsquo;s useful.</a></li>
+    <li><a href="#well-damn-how-do-i-remove-a-bunch-of-dotfiles-that-arent-tracked-anyway">Well, damn. How do I remove a bunch of dotfiles that aren&rsquo;t tracked anyway?</a></li>
+    <li><a href="#replacing-that-annoying-127-error-or-1-9-etc-in-oh-my-zsh">Replacing that annoying 127 error (or 1, 9, etc) in oh-my-zsh</a></li>
+    <li><a href="#default-shell-iterm2-and-how-it-just-doesnt-matter-what-commands-you-use-for-changing-the-shell-in-iterm---use-the-prefs">Default shell, iTerm2 and how IT JUST DOESN&rsquo;T MATTER what commands you use for changing the shell in iTerm - use the prefs.</a></li>
+    <li><a href="#punchlist---the-return">Punchlist - the return</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=&url=https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fdotfiles-lessons-learned%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=: https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fdotfiles-lessons-learned%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=&amp;body=Check%20out%20this%20site https%3a%2f%2fhugo-profile.netlify.app%2fblogs%2fdotfiles-lessons-learned%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+
+<script src="/js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    <div class="container py-3" id="recent-posts">
+    
+    
+    
+    
+    <div class="h3 text-center text-secondary py-3">
+        Recent Posts
+    </div>
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="/blogs/the-last-unpredicted-tsunami/">
+                        <img src="/images/blogs/23-11-20.jpg" class="card-img-top" alt="When was the last unpredicted tsunami?">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/the-last-unpredicted-tsunami/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="When was the last unpredicted tsunami?">When was the last …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>In preparation for building a model for earthquake initiated tsunami prediction, my thinking is what is needed data on earthquakes, tsunami, and ideally which earthquakes generated tsunami warnings as a check. No surprises here.
+But that got me wondering when was the last tsunami which there was no …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Nov 20, 2023</span>
+                    <a href="/blogs/the-last-unpredicted-tsunami/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/datetimes/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="Datetime. Why is always datetimes?">Datetime. Why is always …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Let&rsquo;s start off with that it&rsquo;s totally possible I overlooked something here.
+I&rsquo;m working on NOAA&rsquo;s tsunami data. I want to combine &lsquo;Year&rsquo;, &lsquo;Mo&rsquo;, &lsquo;Dy&rsquo;, &lsquo;Hr&rsquo;, &lsquo;Mn&rsquo;, &lsquo;Sec&rsquo; columns together as a datetime. …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Nov 19, 2023</span>
+                    <a href="/blogs/datetimes/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/one-of-these-things-is-not-like-the-other/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="One of these things is not like the other">One of these things is …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Just to make it clear, this is mostly as a matter of record and as a reminder to myself. I like this hugo theme but there is some excess stuff. I&rsquo;m not a front-end developer, so it typically takes me a while to figure out what I suppose is a pretty easy thing.
+Anyway, notice this blue link …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Nov 5, 2023</span>
+                    <a href="/blogs/one-of-these-things-is-not-like-the-other/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</div><div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/hrokr" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <span class="px-1">
+        <a href="https://linkedin.com/in/hrokr/" aria-label="linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
+                viewBox="0 0 512 512">
+                <rect width="512" height="512" fill="#0077b5" rx="15%" />
+                <circle cx="142" cy="138" r="37" />
+                <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198" />
+                <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" />
+            </svg>
+        </a>
+    </span>
+    
+
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            <div class="pb-2">
+                <a href="https://hugo-profile.netlify.app" title="The Data Stream">
+                    <img alt="Footer logo" src="/icon.png"
+                        height="40px" width="40px">
+                </a>
+            </div>
+            &copy; 2023  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div></footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>
